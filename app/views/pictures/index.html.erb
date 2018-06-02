@@ -1,0 +1,59 @@
+<body>
+<h1 id="title"><center>SoFlo</center></h1>
+<table>
+  <thead>
+    <navbar class="navbar">
+    <tr>
+      <th id="pic_title">Title</th>
+      <th>Url</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pictures.each do |picture| %>
+      <tr>
+        <td id="picture_title"><b><%= picture.title %></b></td>
+        <td><%= image_tag picture.url %></td>
+        <td><%= link_to 'Show', picture %></td>
+        <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
+        <td><%= link_to 'Delete', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</navbar>
+<div id="sunrise" 
+    background="sunrise.jpg" class="sunrise">
+    <!-- <h6 class="cred">Photo Credit:  Lori Escobar 2018</h6> -->
+  </div>
+
+
+
+<!-- <div class="carousel-cell">
+  <div class="carousel-cell">
+    <img src="badger.jpg" alt="By the Beach" />
+  </div>
+  <div class="carousel-cell">
+    <img src="chandelier.jpg" alt="Colorful Chandelier" />
+  </div>
+  <div class="carousel-cell">
+    <img src="orange.jpg" alt="Orange Flowers" />
+  </div>
+  <div class="carousel-cell">
+    <img src="yellowpalm.jpg" alt="Yellow Palm Branch" />
+  </div>
+  <div class="carousel-cell">
+    <img src="facepalm.jpg" alt="Street Art" />
+  </div>
+  <div class="carousel-cell">
+    <img src="kayak.jpg" alt="Kayaks Ready to Go" />
+  </div>
+  <div class="carousel-cell">
+    <img src="canal.jpg" alt="Canal View with Leaves" />
+  </div>
+</div> -->
+
+<br>
+<%= link_to 'New Picture', new_picture_path %>
+</body>
